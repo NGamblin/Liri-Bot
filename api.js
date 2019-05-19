@@ -11,6 +11,7 @@ var fs = require("fs");
 
 
 
+
 var searchReq = function () {
 
   this.searchConcerts = function (artist) {
@@ -44,18 +45,36 @@ var searchReq = function () {
       var jsonData = data.tracks.items;
       // console.log(jsonData)
       console.log("Songs matching: " + searchTerm + "\n")
-    
+
 
       for (i = 0; i < jsonData.length; i++) {
-      console.log("____________________" + "\n")
-      console.log("Song Name: " + data.tracks.items[i].name);
-      console.log("Artist: " + data.tracks.items[i].artists[0].name);
-      console.log("Album: " + data.tracks.items[0].album.name);
-      console.log("Preview: " + data.tracks.items[i].preview_url);
-    }
+        console.log("____________________" + "\n")
+        console.log("Song Name: " + data.tracks.items[i].name);
+        console.log("Artist: " + data.tracks.items[i].artists[0].name);
+        console.log("Album: " + data.tracks.items[0].album.name);
+        console.log("Preview: " + data.tracks.items[i].preview_url);
+      }
     });
   };
-};
+
+  this.movieSearch = function (searchTerm) {
+    var URL = "https://www.omdbapi.com/?t=" + searchTerm + "&y=&plot=short&apikey=trilogy"
+    axios.get(URL).then(function (response) {
+      console.log("____________________" + "\n")
+      console.log("Title: " + response.data.Title);
+      console.log("Release Year: " + response.data.Year);
+      console.log("IMDB Rating: " + response.data.imdbRating);
+      console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+      console.log("Language: " + response.data.Language);
+      console.log("Plot: " + response.data.Plot);
+      console.log("Actors: " + response.data.Actors);
+      console.log("____________________" + "\n")
+    })
+  
+}
+}
+
+
 
 
 

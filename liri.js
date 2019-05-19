@@ -16,6 +16,9 @@ if (searchCmd === "concert-this") {
 
     console.log("Searching for Song..." + "\n");
     searchReq.spotifySearch(searchTerm)
+} else if (searchCmd === "movie-this"){
+    console.log("Searching for Movie..." + "\n")
+    searchReq.movieSearch(searchTerm)
 }
 
 
