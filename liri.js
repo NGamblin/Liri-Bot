@@ -1,18 +1,22 @@
-var concertEvents = require("./api");
+var searchReq = require("./api");
 
-// Create a new searchConcerts object
-var concertEvents = new concertEvents();
+var searchReq = new searchReq();
 
-// Grab search commanodnd line argument
 var searchCmd = process.argv[2];
-// Joining the remaining arguments since an actor or tv show name may contain spaces
-var term = process.argv.slice(3).join(" ");
 
-// Print whether searching for a show or actor, print the term as well
+var searchTerm = process.argv.slice(3).join(" ");
+
+//call proper api func based on searchCmd
 if (searchCmd === "concert-this") {
-  console.log("Searching for Concerts..."+"\n");
-  concertEvents.searchConcerts(term);
-} else {
-  console.log("POOOOOOOP");
+
+    console.log("Searching for Concerts..." + "\n");
+    searchReq.searchConcerts(searchTerm);
+
+} else if (searchCmd === "spotify-this-song") {
+
+    console.log("Searching for Song..." + "\n");
+    searchReq.spotifySearch(searchTerm)
 }
+
+
 
