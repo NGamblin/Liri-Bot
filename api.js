@@ -41,12 +41,10 @@ var searchReq = function () {
       if (err) {
         return console.log('Error occurred: ' + err);
       }
+      var jsonData = data.tracks.items;
+
       console.log("____________________" + "\n")
       var jsonData = data.tracks.items;
-      // console.log(jsonData)
-      console.log("Songs matching: " + searchTerm + "\n")
-
-
       for (i = 0; i < jsonData.length; i++) {
         console.log("____________________" + "\n")
         console.log("Song Name: " + data.tracks.items[i].name);
