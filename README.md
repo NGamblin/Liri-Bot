@@ -1,4 +1,10 @@
 # Liri-Bot
 Liri Bot
 
-![](Liri-Bot/images/concert-this.png)
+![](/images/concert-this.JPG)
+
+
+![](/images/spotify-this-song.JPG)
+
+
+![](/images/movie-this.JPG)
