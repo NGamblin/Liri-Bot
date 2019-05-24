@@ -1,4 +1,4 @@
 # Liri-Bot
 Liri Bot
 
-![](/images/concert-this.png)
+![](Liri-Bot/images/concert-this.png)
